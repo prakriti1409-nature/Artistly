@@ -15,13 +15,13 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white shadow-sm border-b">
+    <header className="sticky top-0 z-50 w-full bg-white shadow border-b">
       <nav
         className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16"
         aria-label="Main Navigation"
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center" aria-label="Go to homepage">
+        <Link href="/" className="flex items-center space-x-2" aria-label="Go to homepage">
           <Image
             src="/images/PL.png"
             alt="Artistly Logo"
@@ -32,14 +32,14 @@ const Navbar = () => {
         </Link>
 
         {/* Navigation Links */}
-        <ul className="flex list-none items-center space-x-6">
+        <ul className="flex items-center space-x-6 list-none">
           {navItems.map(({ name, href }) => (
             <li key={href}>
               <Link
                 href={href}
-                className={`relative no-underline text-sm font-medium px-3 py-2 transition-colors duration-200 ${
+                className={`text-sm font-medium px-2 py-1 transition-colors duration-200 ${
                   pathname === href
-                    ? "text-purple-700 border-b-2 border-teal-600"
+                    ? "text-purple-700 border-b-2 border-purple-700"
                     : "text-gray-700 hover:text-purple-600"
                 }`}
               >
