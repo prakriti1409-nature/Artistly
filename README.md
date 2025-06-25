@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎤 Artistly – Discover & Book Top Artists
 
-## Getting Started
+Artistly is a modern platform to **discover**, **showcase**, and **book performers** for events. From singers to speakers, Artistly connects talent with the right stage.
 
-First, run the development server:
+![Hero Banner](public/images/h.jpg)
+
+---
+
+## 🚀 Features
+
+- 🧑‍🎤 Artist onboarding with form validation
+- 🔍 Filterable artist listing
+- 📆 Category-based browsing (Singers, DJs, Dancers, Speakers)
+- 📦 Full-stack app with API routes
+- ✨ Responsive and modern UI (Tailwind CSS + Next.js 15)
+- 🔐 Form validation using `yup` + `react-hook-form`
+
+---
+
+## 🧱 Tech Stack
+
+| Tech             | Use                                      |
+|------------------|-------------------------------------------|
+| **Next.js 15+**   | App Router for routing and pages         |
+| **Tailwind CSS** | Styling and responsive layout             |
+| **TypeScript**   | Strong typing                             |
+| **React Hook Form + Yup** | Form handling and validation    |
+| **Vercel**        | Deployment platform                      |
+
+---
+
+
+## 📦 Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/YOUR_USERNAME/artistly.git
+npm install
 ```
+###🚀 Deployment
+-This app is deployed on Vercel :https://artistly-g62m.vercel.app/
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+###🤝 Contributing
+-Contributions are welcome! Please open an issue or pull request.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
