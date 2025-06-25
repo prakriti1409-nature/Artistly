@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FaInstagram, FaTwitter, FaFacebookF } from "react-icons/fa";
 
 export default function HomePage() {
   const categories = [

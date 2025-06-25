@@ -1,7 +1,7 @@
 // src/app/api/artists/route.ts
 import { NextRequest, NextResponse } from "next/server";
 
-let artists: {
+const artists: {
   name: string;
   category: string;
   location: string;

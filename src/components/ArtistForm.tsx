@@ -1,6 +1,6 @@
 'use client';
 
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useState } from "react";
@@ -22,7 +22,6 @@ export default function ArtistForm() {
   const {
     register,
     handleSubmit,
-    control,
     formState: { errors },
     reset,
   } = useForm({
@@ -38,9 +37,9 @@ export default function ArtistForm() {
     },
   });
 
-  const [submittedData, setSubmittedData] = useState<any>(null);
+  const [submittedData, setSubmittedData] = useState<Record<string, any> | null>(null);
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: Record<string, any>) => {
     console.log("Submitted:", data);
     setSubmittedData(data);
     reset();
