@@ -37,9 +37,9 @@ export default function ArtistForm() {
     },
   });
 
-  const [submittedData, setSubmittedData] = useState<Record<string, any> | null>(null);
+  const [submittedData, setSubmittedData] = useState<Record<string, unknown> | null>(null);
 
-  const onSubmit = (data: Record<string, any>) => {
+  const onSubmit = (data: Record<string, unknown>) => {
     console.log("Submitted:", data);
     setSubmittedData(data);
     reset();
@@ -54,7 +54,7 @@ export default function ArtistForm() {
           {...register("name")}
           className="mt-1 block w-full border rounded px-3 py-2"
         />
-        <p className="text-red-500 text-sm mt-1">{errors.name?.message}</p>
+        <p className="text-red-500 text-sm mt-1">{errors.name?.message as string}</p>
       </div>
 
       {/* Bio */}
@@ -65,7 +65,7 @@ export default function ArtistForm() {
           rows={4}
           className="mt-1 block w-full border rounded px-3 py-2"
         />
-        <p className="text-red-500 text-sm mt-1">{errors.bio?.message}</p>
+        <p className="text-red-500 text-sm mt-1">{errors.bio?.message as string}</p>
       </div>
 
       {/* Category */}
@@ -79,7 +79,7 @@ export default function ArtistForm() {
             </label>
           ))}
         </div>
-        <p className="text-red-500 text-sm mt-1">{errors.categories?.message}</p>
+        <p className="text-red-500 text-sm mt-1">{errors.categories?.message as string}</p>
       </div>
 
       {/* Languages */}
@@ -93,7 +93,7 @@ export default function ArtistForm() {
             </label>
           ))}
         </div>
-        <p className="text-red-500 text-sm mt-1">{errors.languages?.message}</p>
+        <p className="text-red-500 text-sm mt-1">{errors.languages?.message as string}</p>
       </div>
 
       {/* Fee Range */}
@@ -106,7 +106,7 @@ export default function ArtistForm() {
           <option value="₹50,000 - ₹1,00,000">₹50,000 - ₹1,00,000</option>
           <option value="Above ₹1,00,000">Above ₹1,00,000</option>
         </select>
-        <p className="text-red-500 text-sm mt-1">{errors.feeRange?.message}</p>
+        <p className="text-red-500 text-sm mt-1">{errors.feeRange?.message as string}</p>
       </div>
 
       {/* Location */}
@@ -116,7 +116,7 @@ export default function ArtistForm() {
           {...register("location")}
           className="mt-1 block w-full border rounded px-3 py-2"
         />
-        <p className="text-red-500 text-sm mt-1">{errors.location?.message}</p>
+        <p className="text-red-500 text-sm mt-1">{errors.location?.message as string}</p>
       </div>
 
       {/* Image Upload */}
