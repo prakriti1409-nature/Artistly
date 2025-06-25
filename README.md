@@ -2,7 +2,6 @@
 
 Artistly is a modern platform to **discover**, **showcase**, and **book performers** for events. From singers to speakers, Artistly connects talent with the right stage.
 
-![Hero Banner](public/images/h.jpg)
 
 ---
 
