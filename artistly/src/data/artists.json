@@ -1,0 +1,157 @@
+
+[
+  {
+    "name": "Arijit Roy",
+    "category": "Singer",
+    "genre": "Pop",
+    "location": "Mumbai",
+    "fee": "₹50,000"
+  },
+  {
+    "name": "Meera Dance Co.",
+    "category": "Dancer",
+    "style": "Bollywood",
+    "location": "Delhi",
+    "fee": "₹40,000"
+  },
+  {
+    "name": "DJ Sonic",
+    "category": "DJ",
+    "genre": "EDM",
+    "location": "Bengaluru",
+    "fee": "₹60,000"
+  },
+  {
+    "name": "Rahul Talks",
+    "category": "Speaker",
+    "topic": "Motivation",
+    "location": "Hyderabad",
+    "fee": "₹30,000"
+  },
+  {
+    "name": "Symphony Strings",
+    "category": "Singer",
+    "genre": "Classical",
+    "location": "Chennai",
+    "fee": "₹75,000"
+  },
+  {
+    "name": "The Groove Makers",
+    "category": "Dancer",
+    "style": "Hip-Hop",
+    "location": "Pune",
+    "fee": "₹35,000"
+  },
+  {
+    "name": "DJ Electro",
+    "category": "DJ",
+    "genre": "Techno",
+    "location": "Goa",
+    "fee": "₹55,000"
+  },
+  {
+    "name": "Dr. Anya Sharma",
+    "category": "Speaker",
+    "topic": "Wellness & Health",
+    "location": "Mumbai",
+    "fee": "₹80,000"
+  },
+  {
+    "name": "Voice of Punjab",
+    "category": "Singer",
+    "genre": "Folk",
+    "location": "Chandigarh",
+    "fee": "₹45,000"
+  },
+  {
+    "name": "Kathak Kala Kendra",
+    "category": "Dancer",
+    "style": "Kathak",
+    "location": "Lucknow",
+    "fee": "₹50,000"
+  },
+  {
+    "name": "DJ Beat King",
+    "category": "DJ",
+    "genre": "Bollywood",
+    "location": "Mumbai",
+    "fee": "₹70,000"
+  },
+  {
+    "name": "Professor G. Kumar",
+    "category": "Speaker",
+    "topic": "Technology & Innovation",
+    "location": "Delhi",
+    "fee": "₹90,000"
+  },
+  {
+    "name": "Rock Brigade",
+    "category": "Singer",
+    "genre": "Rock",
+    "location": "Kolkata",
+    "fee": "₹65,000"
+  },
+  {
+    "name": "Salsa Sensation",
+    "category": "Dancer",
+    "style": "Salsa",
+    "location": "Hyderabad",
+    "fee": "₹42,000"
+  },
+  {
+    "name": "DJ Flow",
+    "category": "DJ",
+    "genre": "Hip-Hop",
+    "location": "Chennai",
+    "fee": "₹48,000"
+  },
+  {
+    "name": "Financial Guru",
+    "category": "Speaker",
+    "topic": "Finance & Investment",
+    "location": "Ahmedabad",
+    "fee": "₹60,000"
+  },
+  {
+    "name": "Opera Diva",
+    "category": "Singer",
+    "genre": "Opera",
+    "location": "Mumbai",
+    "fee": "₹85,000"
+  },
+  {
+    "name": "Bhangra Blasters",
+    "category": "Dancer",
+    "style": "Bhangra",
+    "location": "Amritsar",
+    "fee": "₹52,000"
+  },
+  {
+    "name": "Jazz Ensemble",
+    "category": "Singer",
+    "genre": "Jazz",
+    "location": "Bengaluru",
+    "fee": "₹70,000"
+  },
+  {
+    "name": "Yoga & Mindfulness Coach",
+    "category": "Speaker",
+    "topic": "Mindfulness",
+    "location": "Mysuru",
+    "fee": "₹40,000"
+  },
+  {
+    "name": "Contemporary Crew",
+    "category": "Dancer",
+    "style": "Contemporary",
+    "location": "Chandigarh",
+    "fee": "₹48,000"
+  },
+  {
+    "name": "DJ Trance",
+    "category": "DJ",
+    "genre": "Trance",
+    "location": "Pune",
+    "fee": "₹62,000"
+  }
+]
