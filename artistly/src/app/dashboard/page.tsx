@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Table from "@/components/Table";
 
 type Artist = {
   name: string;
@@ -18,47 +19,32 @@ const dummyArtists: Artist[] = [
 export default function DashboardPage() {
   const [artists, setArtists] = useState<Artist[]>(dummyArtists);
 
+  const handleRemove = (index: number) => {
+    setArtists((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const columns = [
+    { header: "Name", accessor: "name" as keyof Artist },
+    { header: "Category", accessor: "category" as keyof Artist },
+    { header: "Location", accessor: "location" as keyof Artist },
+    { header: "Fee Range", accessor: "feeRange" as keyof Artist },
+    {
+      header: "Actions",
+      render: (_: Artist, index: number) => (
+        <button
+          onClick={() => handleRemove(index)}
+          className="text-red-600 hover:underline"
+        >
+          Remove
+        </button>
+      ),
+    },
+  ];
+
   return (
     <div className="max-w-5xl mx-auto mt-12">
       <h1 className="text-2xl font-bold mb-6">Artist Submissions</h1>
-      <div className="overflow-x-auto bg-white shadow rounded-lg">
-        <table className="min-w-full divide-y divide-gray-200 text-sm">
-          <thead className="bg-gray-100">
-            <tr>
-              <th className="px-6 py-3 text-left font-medium text-gray-700">Name</th>
-              <th className="px-6 py-3 text-left font-medium text-gray-700">Category</th>
-              <th className="px-6 py-3 text-left font-medium text-gray-700">Location</th>
-              <th className="px-6 py-3 text-left font-medium text-gray-700">Fee Range</th>
-              <th className="px-6 py-3"></th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-100">
-            {artists.map((artist, index) => (
-              <tr key={index}>
-                <td className="px-6 py-4">{artist.name}</td>
-                <td className="px-6 py-4">{artist.category}</td>
-                <td className="px-6 py-4">{artist.location}</td>
-                <td className="px-6 py-4">{artist.feeRange}</td>
-                <td className="px-6 py-4 text-right">
-                  <button
-                    onClick={() => setArtists(artists.filter((_, i) => i !== index))}
-                    className="text-red-600 hover:underline"
-                  >
-                    Remove
-                  </button>
-                </td>
-              </tr>
-            ))}
-            {artists.length === 0 && (
-              <tr>
-                <td colSpan={5} className="text-center text-gray-500 py-6">
-                  No submissions available.
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </div>
+      <Table data={artists} columns={columns} />
     </div>
   );
 }

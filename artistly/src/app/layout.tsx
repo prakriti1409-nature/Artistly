@@ -18,9 +18,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={geist.variable}>
       <body
-        className="min-h-screen font-sans text-black bg-fixed bg-cover bg-center relative"
+        className="min-h-screen font-sans text-white bg-fixed bg-cover bg-center relative"
         style={{
-          backgroundImage: "url('/images/e.jpg')", // 🔁 Replace with your actual background image path if needed
+          backgroundImage: "url('/images/kl.jpg')", // 🔁 Replace with your actual background image path if needed
         }}
       >
         {/* Optional dark gradient overlay for better readability */}
