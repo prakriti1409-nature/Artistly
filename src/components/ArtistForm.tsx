@@ -3,7 +3,6 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { useState } from "react";
 
 const schema = yup.object().shape({
   name: yup.string().required("Name is required"),
@@ -41,14 +40,11 @@ export default function ArtistForm({ onSuccess }: Props) {
     },
   });
 
-  const [submittedData, setSubmittedData] = useState<Record<string, any> | null>(null);
-
-  const onSubmit = (data: Record<string, any>) => {
+  const onSubmit = (data: Record<string, unknown>) => {
     console.log("Submitted:", data);
-    setSubmittedData(data);
     reset();
     if (onSuccess) {
-      onSuccess(); // 👉 Trigger parent callback
+      onSuccess(); // Trigger alert or success handler
     }
   };
 
@@ -75,7 +71,7 @@ export default function ArtistForm({ onSuccess }: Props) {
         <p className="text-red-500 text-sm mt-1">{errors.bio?.message}</p>
       </div>
 
-      {/* Category */}
+      {/* Categories */}
       <div>
         <label className="block font-semibold">Categories</label>
         <div className="flex flex-wrap gap-4 mt-2">
@@ -106,7 +102,10 @@ export default function ArtistForm({ onSuccess }: Props) {
       {/* Fee Range */}
       <div>
         <label className="block font-semibold">Fee Range</label>
-        <select {...register("feeRange")} className="block w-full border rounded px-3 py-2 mt-1">
+        <select
+          {...register("feeRange")}
+          className="block w-full border rounded px-3 py-2 mt-1"
+        >
           <option value="">Select fee range</option>
           <option value="Below ₹10,000">Below ₹10,000</option>
           <option value="₹10,000 - ₹50,000">₹10,000 - ₹50,000</option>
