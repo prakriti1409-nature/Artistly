@@ -5,10 +5,10 @@ import Link from "next/link";
 
 export default function HomePage() {
   const categories = [
-    { name: "Singers", image: "/images/a1.jpg", link: "/artists" },
-    { name: "Dancers", image: "/images/b.jpg", link: "/artists" },
-    { name: "DJs", image: "/images/c.jpg", link: "/artists" },
-    { name: "Speakers", image: "/images/d.jpg", link: "/artists" },
+    { name: "Singers", image: "/images/c.jpg", overlay: "/images/a1.jpg", link: "/artists" },
+    { name: "Dancers", image: "/images/c.jpg", overlay: "/images/b.jpg", link: "/artists" },
+    { name: "DJs", image: "/images/c.jpg", overlay: "/images/c.jpg", link: "/artists" },
+    { name: "Speakers", image: "/images/c.jpg", overlay: "/images/d.jpg", link: "/artists" },
   ];
 
   return (
@@ -20,9 +20,8 @@ export default function HomePage() {
             Discover Exceptional Talent
           </h1>
           <h3 className="mt-6 text-lg sm:text-xl font-medium text-gray-300">
-            In every corner of this country, voices rise, feet move in rhythm, ideas spark in silence — all waiting to be heard, seen, and celebrated. Artists are not just entertainers; they are storytellers, soul-healers, and the unseen bridges between people, cultures, and moments. Yet for many, the stage remains out of reach, not because of talent, but because of opportunity. This platform is built to change that — to give every voice a chance to echo, every rhythm a place to dance, and every event a performer who can turn it into magic. Here, we don’t just book talent — we unlock it.
+            In every corner of this country, voices rise, feet move in rhythm, ideas spark in silence — all waiting to be heard, seen, and celebrated...
           </h3>
-
           <h4 className="mt-6 text-base sm:text-lg">
             From singers to speakers, find the perfect artist to elevate your next event.
           </h4>
@@ -52,13 +51,30 @@ export default function HomePage() {
           {categories.map((item) => (
             <Link key={item.name} href={item.link}>
               <div className="flex flex-col items-center bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 cursor-pointer">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  width={300}
-                  height={300}
-                  className="rounded-md object-cover border-2 border-purple-300"
-                />
+                
+                {/* Layered Image for All Categories */}
+                <div className="relative w-[300px] h-[300px]">
+                  <Image
+                    src={item.image}
+                    alt={`${item.name} Background`}
+                    fill
+                    className="rounded-md object-cover border-2 border-purple-300 opacity-80"
+                    style={{ zIndex: 1 }}
+                  />
+                  <Image
+                    src={item.overlay}
+                    alt={`${item.name} Overlay`}
+                    fill
+                    className="rounded-md object-cover border-2 border-purple-500"
+                    style={{
+                      zIndex: 2,
+                      position: "absolute",
+                      top: "10px",
+                      left: "10px",
+                    }}
+                  />
+                </div>
+
                 <h3 className="mt-4 text-xl font-bold text-purple-800">{item.name}</h3>
               </div>
             </Link>
@@ -66,7 +82,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Simple Footer */}
+      {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 text-center py-6 text-sm">
         © 2025 All rights reserved.
       </footer>

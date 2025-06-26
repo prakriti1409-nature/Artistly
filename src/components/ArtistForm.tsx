@@ -18,7 +18,11 @@ const schema = yup.object().shape({
 const categoriesList = ["Singer", "Dancer", "DJ", "Speaker"];
 const languagesList = ["English", "Hindi", "Punjabi", "Tamil"];
 
-export default function ArtistForm() {
+type Props = {
+  onSuccess?: () => void;
+};
+
+export default function ArtistForm({ onSuccess }: Props) {
   const {
     register,
     handleSubmit,
@@ -37,12 +41,15 @@ export default function ArtistForm() {
     },
   });
 
-  const [submittedData, setSubmittedData] = useState<Record<string, unknown> | null>(null);
+  const [submittedData, setSubmittedData] = useState<Record<string, any> | null>(null);
 
-  const onSubmit = (data: Record<string, unknown>) => {
+  const onSubmit = (data: Record<string, any>) => {
     console.log("Submitted:", data);
     setSubmittedData(data);
     reset();
+    if (onSuccess) {
+      onSuccess(); // 👉 Trigger parent callback
+    }
   };
 
   return (
@@ -54,7 +61,7 @@ export default function ArtistForm() {
           {...register("name")}
           className="mt-1 block w-full border rounded px-3 py-2"
         />
-        <p className="text-red-500 text-sm mt-1">{errors.name?.message as string}</p>
+        <p className="text-red-500 text-sm mt-1">{errors.name?.message}</p>
       </div>
 
       {/* Bio */}
@@ -65,7 +72,7 @@ export default function ArtistForm() {
           rows={4}
           className="mt-1 block w-full border rounded px-3 py-2"
         />
-        <p className="text-red-500 text-sm mt-1">{errors.bio?.message as string}</p>
+        <p className="text-red-500 text-sm mt-1">{errors.bio?.message}</p>
       </div>
 
       {/* Category */}
@@ -79,7 +86,7 @@ export default function ArtistForm() {
             </label>
           ))}
         </div>
-        <p className="text-red-500 text-sm mt-1">{errors.categories?.message as string}</p>
+        <p className="text-red-500 text-sm mt-1">{errors.categories?.message}</p>
       </div>
 
       {/* Languages */}
@@ -93,7 +100,7 @@ export default function ArtistForm() {
             </label>
           ))}
         </div>
-        <p className="text-red-500 text-sm mt-1">{errors.languages?.message as string}</p>
+        <p className="text-red-500 text-sm mt-1">{errors.languages?.message}</p>
       </div>
 
       {/* Fee Range */}
@@ -106,7 +113,7 @@ export default function ArtistForm() {
           <option value="₹50,000 - ₹1,00,000">₹50,000 - ₹1,00,000</option>
           <option value="Above ₹1,00,000">Above ₹1,00,000</option>
         </select>
-        <p className="text-red-500 text-sm mt-1">{errors.feeRange?.message as string}</p>
+        <p className="text-red-500 text-sm mt-1">{errors.feeRange?.message}</p>
       </div>
 
       {/* Location */}
@@ -116,7 +123,7 @@ export default function ArtistForm() {
           {...register("location")}
           className="mt-1 block w-full border rounded px-3 py-2"
         />
-        <p className="text-red-500 text-sm mt-1">{errors.location?.message as string}</p>
+        <p className="text-red-500 text-sm mt-1">{errors.location?.message}</p>
       </div>
 
       {/* Image Upload */}
@@ -132,14 +139,6 @@ export default function ArtistForm() {
       >
         Submit
       </button>
-
-      {/* Debug Preview */}
-      {submittedData && (
-        <div className="mt-6 p-4 bg-green-50 border border-green-300 rounded text-sm">
-          <h4 className="font-semibold text-green-800 mb-2">Submitted Data:</h4>
-          <pre className="whitespace-pre-wrap">{JSON.stringify(submittedData, null, 2)}</pre>
-        </div>
-      )}
     </form>
   );
 }
