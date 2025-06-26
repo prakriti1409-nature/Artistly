@@ -39,10 +39,9 @@ npm install
 -This app is deployed on Vercel : https://artistly-e2yb.vercel.app/
 
 
-![image](https://github.com/user-attachments/assets/e8631470-4dd3-45f0-9e60-4c08b0c67e27)
-
 ![image](https://github.com/user-attachments/assets/40ca8d66-d851-4acd-82a9-c4ccad98d8f3)
 
+![image](https://github.com/user-attachments/assets/d236a823-c188-4997-99a5-994a4ac5ac03)
 
 
 ###🤝 Contributing
