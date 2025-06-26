@@ -36,7 +36,7 @@ git clone https://github.com/YOUR_USERNAME/artistly.git
 npm install
 ```
 ###🚀 Deployment
--This app is deployed on Vercel : 
+-This app is deployed on Vercel : https://artistly-e2yb.vercel.app/
 
 
 ![image](https://github.com/user-attachments/assets/e8631470-4dd3-45f0-9e60-4c08b0c67e27)
